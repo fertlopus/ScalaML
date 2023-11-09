@@ -24,9 +24,33 @@ If you have changes to suggest for this repository, either:
 
 All the dependencies are listed in `build.sbt file` 
 
---- 
+## Linear Regression
 
-Classes implemented: 
+The `LinearRegression` class provides an implementation of simple linear regression that can be trained using Stochastic Gradient Descent (SGD).
+
+### Usage
+
+To use the `LinearRegression` class, you must first read your data from a CSV file, separate it into features and target arrays, and then fit the model.
+
+```scala
+import machinelearning.{CSVReader, LinearRegression}
+
+object RegressionApp {
+  def main(args: Array[String]): Unit = {
+    val filePath = "path/to/your/data.csv"
+    val data = CSVReader.readCSV(filePath)
+    val features = data.map(row => row.init.map(_.toDouble).toArray).toArray
+    val target = data.map(row => row.last.toDouble).toArray
+
+    val regression = new LinearRegression()
+    regression.fit(features, target, learningRate = 0.01, epochs = 1000)
+    // ...
+  }
+}
+```
+
+
+Classes implemented:
 
 * `MyCSVReader` - class for reading the raw (table) csv file format for further usage in machine learning algorithms
-* 
+* `LinearRegression` - class for linear regression algorithm using vanilla gradient descent
