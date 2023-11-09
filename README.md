@@ -17,6 +17,14 @@ How to install:
 
 * clone the repo or download as zip
 * open with IntelliJ as it is a simple IDEA project
+* Scala Build Tools (SBT)
+* Java Development Kit (JDK) >= 8.x.x
+* IDE
+
+Navigate to the project directory and run:
+`sbt compile`
+
+
 
 If you have changes to suggest for this repository, either:
 * submit a GitHub issue
@@ -54,3 +62,7 @@ Classes implemented:
 
 * `MyCSVReader` - class for reading the raw (table) csv file format for further usage in machine learning algorithms
 * `LinearRegression` - class for linear regression algorithm using vanilla gradient descent
+* `SGD` - stochastic Gradient Descent class 
+* `NonLinearRegression` - class for non linear regression
+
+
